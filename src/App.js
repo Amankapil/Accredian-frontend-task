@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import './App.css'
+import ReferralModal from './components/ReferralModal'
+import HeroSection from './components/HeroSection'
+import Benefits from './components/Benefits'
+import Faq from './components/Faq'
+import Footer from './components/Footer'
 
-function App() {
+const App = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const openModal = () => setIsModalOpen(true)
+  const closeModal = () => setIsModalOpen(false)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <ReferralModal isOpen={isModalOpen} closeModal={closeModal} />
+      <HeroSection openModal={openModal} />
+      <Benefits openModal={openModal} />
+      <Faq openModal={openModal} />
+      <Footer />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
