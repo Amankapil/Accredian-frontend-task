@@ -51,7 +51,7 @@ const ReferralModal = ({ isOpen, closeModal }) => {
       return
     }
 
-    const url = 'http://localhost:5000/api/referral'
+    const url = 'https://accredian-backend-task-dv4x.onrender.com/api'
     try {
       const response = await fetch(url, {
         method: 'POST',
@@ -66,7 +66,8 @@ const ReferralModal = ({ isOpen, closeModal }) => {
       }
 
       const data = await response.json()
-      setSuccess('Referral submitted successfully! and sent a mail')
+      console.log(response)
+      alert('Referral submitted successfully! and sent a mail')
       setError('')
       console.log(data)
       closeModal()
