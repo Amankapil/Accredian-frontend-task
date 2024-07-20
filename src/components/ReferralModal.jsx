@@ -51,7 +51,8 @@ const ReferralModal = ({ isOpen, closeModal }) => {
       return
     }
 
-    const url = 'https://accredian-backend-task-dv4x.onrender.com/api'
+    // const url = 'https://accredian-backend-task-dv4x.onrender.com/api'
+    const url = 'http://localhost:5000/api'
     try {
       const response = await fetch(url, {
         method: 'POST',
